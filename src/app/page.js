@@ -1,24 +1,21 @@
-import Link from 'next/link';
-import { BsGrid3X3Gap } from "react-icons/bs";
+import HomeHeader from "@/Components/HomeHeader";
+import HomeSearch from "@/Components/HomeSearch";
+import Image from "next/image";
 
-export default function HomeHeader() {
+export default function Home(){
   return(
- <header className='flex justify-end p-5 text-sm'>
-  <div className='flex space-x-4 items-center'>
-    <Link href={"https://mail.google.com"}
-    className='hover:underline'>
-      Gmail
-    </Link>
-    <Link href={"https://images.google.com"}
-    className='hover:underline'>
-      Images
-    </Link>
-   <BsGrid3X3Gap className='bg-transparent
-   hover:bg-gray-200 hover:rounded-full text-4xl p-2'/>
-   <button className='bg-blue-500 text-white px-6 py-2 font-medium rounded-md
-   hover:brightness-105 hover:shadow-md transition-shadow '>Sign in </button>
-
-  </div>
- </header>
-  )
+    <>
+    <HomeHeader/>
+    <div className="flex flex-col items-center mt-24">
+      <Image src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Google_logo_%282010-2013%29.svg/640px-Google_logo_%282010-2013%29.svg.png'
+      alt='Google logo'
+      width={300}
+      height={100}
+      priority
+      style={{width:'auto'}}
+      />
+      <HomeSearch/>  
+    </div>
+    </>
+  );
 }
